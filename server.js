@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get('/', function(req, res) {
-  res.sendfile("index.html");
+  res.sendFile(__dirname + "/index.html");
 });
 
 //Authentication
