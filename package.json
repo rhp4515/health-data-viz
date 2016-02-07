@@ -1,0 +1,16 @@
+{
+  "name": "Health_Data_Viz",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "bluebutton": "^0.4.2",
+    "body-parser": "^1.14.2",
+    "bootstrap": "^3.3.6",
+    "cli": "^0.11.1",
+    "express": "^4.13.4",
+    "fs": "0.0.2",
+    "mongoose": "^4.4.2",
+    "multer": "^1.1.0",
+    "ng-file-upload": "^11.2.3",
+  }
+}
