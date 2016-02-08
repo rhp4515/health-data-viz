@@ -6,7 +6,7 @@
               // console.log("NavigationController");
               $http.post('api/records/get-records')
                    .success(function(response){
-                      console.log(response.data);
+                      // console.log(response.data);
                       var records = [];
                       //TODO: processing data should go to angular service
                       for(var i=0; i<response.data.length; i++) {
@@ -32,7 +32,7 @@
                         }
                         records.push(obj);
                       }
-                      console.log(records);
+                      // console.log(records);
                       $scope.tableData = records;
                       $scope.showTable = true;
                    })
