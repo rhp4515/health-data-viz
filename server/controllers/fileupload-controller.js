@@ -1,4 +1,3 @@
-var mongoose = require('mongoose');
 var fs = require('fs');
 var cli = require('cli');
 var mongoose = require('mongoose');

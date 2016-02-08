@@ -5,8 +5,8 @@
 
     <script type="text/javascript" src="node_modules/angular/angular.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
-    <script type="text/javascript" src="app/signup/signup-controller.js"></script>
-    <script type="text/javascript" src="app/fileupload/fileupload-controller.js"></script>
+    <script type="text/javascript" src="app/controllers/fileupload-controller.js"></script>
+    <script type="text/javascript" src="app/controllers/navigation-controller.js"></script>
     
     <script src="node_modules/ng-file-upload/dist/ng-file-upload-shim.js"></script> <!-- for no html5 browsers support -->
     <script src="node_modules/ng-file-upload/dist/ng-file-upload.js"></script>
@@ -15,6 +15,10 @@
   </head>
 
   <body>
-    <div ng-include="'app/fileupload/fileupload.html'"></div>
+    <div ng-controller="NavigationController">
+      <div ng-include="'app/views/fileupload.html'"></div>
+      <button ng-click="viewRecords()">View Patient Records</button>
+      <div ng-show="showTable" ng-include="'app/views/tableview.html'"></div>
+    </div>
   </body>
 </html>

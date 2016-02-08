@@ -1,0 +1,51 @@
+<div>
+	<h1>People and Details</h1>
+	<table>
+	<thead style="background-color: lightgray;">
+	  <tr>
+	    <td style="width: 30px;"></td>
+	    <td>Telephone</td>
+	    <td>Name</td>
+	    <td>Address</td>
+	    <td>City</td>
+	    <td>State</td>
+	  </tr>  
+	</thead>
+	<tbody>
+	  <tr ng-repeat-start="patient in tableData">
+	    <td>
+	      <button ng-if="patient.expanded" ng-click="patient.expanded = false">-</button>
+	      <button ng-if="!patient.expanded" ng-click="patient.expanded = true">+</button>
+	    </td>
+	    <td>{{patient.telephone}}</td>
+	    <td>{{patient.name}}</td>
+	    <td>{{patient.street}}</td>
+	    <td>{{patient.state}}</td>
+	    <td>{{patient.city}}</td>
+	  </tr>
+	  <tr ng-if="patient.expanded" ng-repeat-end="">
+	    <td colspan="10">
+	    	<table>
+	    		<tr>
+	    			<th>Serial Number</th>
+                    <th>Date-Time</th>
+                    <th>Test</th>
+                    <th>Value</th>
+                    <th>Nominal Range</th>
+                    <th>Abnormal Value</th>
+                </tr>
+                <tr ng-repeat-start="result in patient.results">
+                	<td>{{result.no}}</td>
+                    <td>{{result.date}}</td>
+                    <td>{{result.testname}}</td>
+                    <td>{{result.value}}</td>
+                    <td>{{result.nominalValue}}</td>
+                    <td>{{result.abnormalValue}}</td>
+                </tr>
+                <tr ng-repeat-end=""></tr>
+	    	</table>
+	    </td>
+	  </tr>
+	</tbody>
+	</table>
+</div>
