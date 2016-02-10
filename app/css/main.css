@@ -3,7 +3,11 @@ body {
   margin-top: 70px;
   margin-left: 40px;
 }
-
+table .selected {
+    background-color:#FFFF99;
+    color:black;
+    font-weight:bold;
+}
 .thumb {
     width: 24px;
     height: 24px;

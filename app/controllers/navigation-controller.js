@@ -28,6 +28,11 @@
                           o.value = result.value + " " + result.unit;
                           o.nominalValue = result.reference_range.text;
                           o.abnormalValue = "-";
+                          o.highlight = false;
+                          if(result.unit == null) {
+                            o.highlight = true;
+                            o.abnormalValue = "Abnormal values gets highlighted like this";
+                          }
                           obj.results.push(o);
                         }
                         records.push(obj);

@@ -1,19 +1,22 @@
 <div ng-controller="FileUploadController">
-    <h4>Upload on file select</h4>
-    <button ngf-select="uploadFiles($files, $invalidFiles)" multiple
+  <div class="row">
+    
+    <button type="button" class="btn btn-primary" ngf-select="uploadFiles($files, $invalidFiles)" multiple
             accept="text/*" ngf-max-height="1000" ngf-max-size="1MB">
-        Select Files</button>
+        Select Files</button> 
+    </div>
     <br><br>
-    Files:
-    <ul>
-      <li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$errorParam}}
-        <span class="progress" ng-show="f.progress >= 0">
-          <div style="width:{{f.progress}}%"  
-              ng-bind="f.progress + '%'"></div>
-        </span>
-      </li>
-      <li ng-repeat="f in errFiles" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}
-      </li> 
-    </ul>
+    <div class="row" ng-show="files">Files Uploaded:
+      <ul>
+        <li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$errorParam}}
+          <span class="progress" ng-show="f.progress >= 0">
+            <div style="width:{{f.progress}}%"  
+                ng-bind="f.progress + '%'"></div>
+          </span>
+        </li>
+        <li ng-repeat="f in errFiles" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}
+        </li> 
+      </ul>
+    </div>
     {{errorMsg}}
 </div>
