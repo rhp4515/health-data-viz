@@ -13,7 +13,7 @@ function insert_user_data(a, b) {
 	user.state = a.address.state;
 	user.results = b;
 	// console.log(user);
-	// user.save();	
+	user.save();	
 }
 
 module.exports.process = function(req, res, next) {

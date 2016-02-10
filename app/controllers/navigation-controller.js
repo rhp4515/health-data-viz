@@ -6,8 +6,14 @@
               // console.log("NavigationController");
               $http.post('api/records/get-records')
                    .success(function(response){
-                      // console.log(response.data);
                       var records = [];
+                      //console.log(response.data);
+                      //If no response, don't show table
+                      if(response.data.length == 0) {
+                        $scope.tableData = records;
+                        $scope.showTable = false;
+                        return;
+                      }                      
                       //TODO: processing data should go to angular service
                       for(var i=0; i<response.data.length; i++) {
                         var userdata = response.data[i];
